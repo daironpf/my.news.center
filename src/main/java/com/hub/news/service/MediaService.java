@@ -1,5 +1,7 @@
 package com.hub.news.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,5 +19,9 @@ public class MediaService {
     @Transactional
     public Media add(Media media){
         return mediaRepository.save(media);
+    }
+
+    public List<Media> getAll() {
+        return mediaRepository.findAll();
     }
 }

@@ -1,5 +1,7 @@
 package com.hub.news.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,5 +19,9 @@ public class UserAppService {
     @Transactional
     public UserApp add(UserApp userApp){
         return userAppRepository.save(userApp);
+    }
+
+    public List<UserApp> getAll(){
+        return userAppRepository.findAll();
     }
 }

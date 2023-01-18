@@ -1,7 +1,10 @@
 package com.hub.news.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,5 +26,11 @@ public class TagRestController {
     public ResponseEntity<Tag> addCategory(@RequestBody Tag tag){
         Tag newTag = tagService.add(tag);
         return new ResponseEntity<>(newTag, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Tag>> getAllCategory(){
+        List<Tag> tags = tagService.getAll();        
+        return new ResponseEntity<>(tags, HttpStatus.OK);
     }
 }

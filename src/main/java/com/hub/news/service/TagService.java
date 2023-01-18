@@ -1,5 +1,7 @@
 package com.hub.news.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,5 +19,9 @@ public class TagService {
     @Transactional
     public Tag add(Tag tag){
         return tagRepository.save(tag);
+    }
+
+    public List<Tag> getAll() {
+        return tagRepository.findAll();
     }
 }

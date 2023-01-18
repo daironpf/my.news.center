@@ -1,15 +1,24 @@
 package com.hub.news.model;
 
+
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Relationship;
+import org.springframework.data.neo4j.core.schema.Relationship.Direction;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 
+import lombok.Data;
+
+@Data
 @Node("Tag")
 public class Tag {
     @Id @GeneratedValue(UUIDStringGenerator.class)
         private String id;
         private String name,url,urlIcon;
+
+        @Relationship(type = "IN_LANGUAGE", direction = Direction.OUTGOING) 
+	    private Language tagInLanguage;
 
         public Tag(String name, String url, String urlIcon) {
             this.name = name;

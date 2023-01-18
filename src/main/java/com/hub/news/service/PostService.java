@@ -1,5 +1,7 @@
 package com.hub.news.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,5 +19,9 @@ public class PostService {
     @Transactional
     public Post add(Post post){
         return postRepository.save(post);
+    }
+
+    public List<Post> getAll() {
+        return postRepository.findAll();
     }
 }

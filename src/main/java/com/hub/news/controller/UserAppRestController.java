@@ -1,7 +1,10 @@
 package com.hub.news.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +22,15 @@ public class UserAppRestController {
         this.userAppService = userAppService;
     }
 
-     @PostMapping("/add")
+    @PostMapping("/add")
     public ResponseEntity<UserApp> addCategory(@RequestBody UserApp userApp){
         UserApp newUserApp = userAppService.add(userApp);
         return new ResponseEntity<>(newUserApp, HttpStatus.CREATED);
     }
-}
+
+    @GetMapping("/all")    
+    public ResponseEntity<List<UserApp>> getAllCategory(){
+        List<UserApp> usersApp = userAppService.getAll();        
+        return new ResponseEntity<>(usersApp, HttpStatus.OK);
+    }
+ }

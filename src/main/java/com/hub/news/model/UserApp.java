@@ -5,6 +5,9 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 
+import lombok.Data;
+
+@Data
 @Node({"User","Editor","Author"})
 public class UserApp {
     @Id @GeneratedValue(UUIDStringGenerator.class)

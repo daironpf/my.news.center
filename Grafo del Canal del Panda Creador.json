@@ -56,8 +56,8 @@
     {
       "id": "n1",
       "position": {
-        "x": 129,
-        "y": 360.81717586319076
+        "x": 55.8655066908708,
+        "y": 309.00873938081077
       },
       "caption": "Español",
       "labels": [
@@ -110,8 +110,8 @@
     {
       "id": "n4",
       "position": {
-        "x": 580.721946555183,
-        "y": 558.7963639521618
+        "x": 559.3299813529263,
+        "y": 512.9920099853873
       },
       "caption": "Se cumplio al 90% la Vacunación",
       "labels": [
@@ -132,8 +132,8 @@
     {
       "id": "n5",
       "position": {
-        "x": 1278.0355989608295,
-        "y": 428.02347724630425
+        "x": 1263.3802632145578,
+        "y": 436.23911693452516
       },
       "caption": "Frank",
       "labels": [
@@ -154,8 +154,8 @@
     {
       "id": "n6",
       "position": {
-        "x": 939.8943997293616,
-        "y": 766.1646764777721
+        "x": 994.3030152290171,
+        "y": 778.560312123603
       },
       "caption": "vacunacion.jpg",
       "labels": [
@@ -173,8 +173,8 @@
     {
       "id": "n7",
       "position": {
-        "x": 1075.115343943645,
-        "y": 123.97280624338009
+        "x": 1070.92399536012,
+        "y": 102.89508277555433
       },
       "caption": "buen post",
       "labels": [
@@ -191,7 +191,7 @@
   "relationships": [
     {
       "id": "n0",
-      "type": "IS_IN",
+      "type": "IN_LANGUAGE",
       "style": {},
       "properties": {},
       "fromId": "n2",
@@ -199,7 +199,7 @@
     },
     {
       "id": "n1",
-      "type": "IS_IN",
+      "type": "IN_LANGUAGE",
       "style": {},
       "properties": {},
       "fromId": "n3",
@@ -207,7 +207,7 @@
     },
     {
       "id": "n2",
-      "type": "IS_IN",
+      "type": "IN_LANGUAGE",
       "style": {},
       "properties": {},
       "fromId": "n4",
@@ -215,7 +215,7 @@
     },
     {
       "id": "n3",
-      "type": "BELONGS_TO",
+      "type": "IN_CATEGORY",
       "style": {},
       "properties": {},
       "fromId": "n4",
@@ -223,7 +223,7 @@
     },
     {
       "id": "n4",
-      "type": "HAS",
+      "type": "HAS_TAG",
       "style": {},
       "properties": {},
       "fromId": "n4",
@@ -231,71 +231,71 @@
     },
     {
       "id": "n5",
+      "fromId": "n5",
+      "toId": "n4",
       "type": "CREATE",
-      "style": {},
       "properties": {
         "created": "Date"
       },
-      "fromId": "n5",
-      "toId": "n4"
+      "style": {}
     },
     {
       "id": "n6",
+      "fromId": "n5",
+      "toId": "n4",
       "type": "HAS_EDITED",
-      "style": {},
       "properties": {
         "updateMoment": "Date"
       },
-      "toId": "n4",
-      "fromId": "n5"
+      "style": {}
     },
     {
       "id": "n7",
-      "type": "CONTAINS",
-      "style": {},
-      "properties": {},
       "fromId": "n4",
-      "toId": "n6"
+      "toId": "n6",
+      "type": "CONTAINS",
+      "properties": {},
+      "style": {}
     },
     {
       "id": "n8",
-      "type": "CREATE",
-      "style": {},
-      "properties": {},
       "fromId": "n5",
-      "toId": "n6"
+      "toId": "n6",
+      "type": "UPLOAD",
+      "properties": {},
+      "style": {}
     },
     {
       "id": "n9",
-      "type": "BELONGS_TO",
-      "style": {},
-      "properties": {},
       "fromId": "n7",
-      "toId": "n4"
+      "toId": "n4",
+      "type": "BELONGS_TO",
+      "properties": {},
+      "style": {}
     },
     {
       "id": "n10",
-      "type": "CREATE",
-      "style": {},
-      "properties": {},
       "fromId": "n5",
-      "toId": "n7"
+      "toId": "n7",
+      "type": "WROTE",
+      "properties": {},
+      "style": {}
     },
     {
       "id": "n11",
       "fromId": "n7",
       "toId": "n7",
-      "type": "COMMENT",
+      "type": "COMMENT_OF",
       "properties": {},
       "style": {}
     },
     {
       "id": "n12",
-      "fromId": "n2",
-      "toId": "n2",
-      "type": "PARENT",
+      "type": "SUB_CATEGORY_OF",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n2",
+      "toId": "n2"
     }
   ]
 }

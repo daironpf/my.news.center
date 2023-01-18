@@ -1,5 +1,7 @@
 package com.hub.news.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,5 +19,9 @@ public class CommentService {
     @Transactional
     public Comment add(Comment comment){
         return commentRepository.save(comment);
+    }
+
+    public List<Comment> getAll() {
+        return commentRepository.findAll();
     }
 }
